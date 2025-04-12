@@ -9,7 +9,12 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect: "postgres",
     logging: false, // Para no ver logs en consola
-    //ssl: true
+    dialectOptions:{
+      ssl:{
+        require: true,
+        rejectUnathorized: false
+      }
+    }
   }
 );
 
